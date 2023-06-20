@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM change attribute value</title>
+</head>
+<body>
+    <div class="container">
+        <img src="images/1.jfif" alt="bird image" id="myImage">
+        <br>
+        <button>change image</button>
+    </div>
+    <script>
+        document.querySelector("button").addEventListener("click",(e)=>{
+            var img = document.querySelector("#myImage");
+            img.setAttribute("src","images/2.jfif");
+            // img.src = "images/2.jfif";
+        });
+    </script>
+</body>
+</html>

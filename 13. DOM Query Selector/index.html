@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selector</title>
+</head>
+<body>
+    <p id="p1" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, sunt.</p>
+    <p id="p2" class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim animi quos minus, alias quas sed.</p>
+    <p id="p3" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quae inventore quo provident iste, reiciendis nemo libero ullam eaque blanditiis.</p>
+    <p id="p4" class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod impedit quas exercitationem quaerat tempore excepturi commodi explicabo sequi modi delectus molestias fuga laudantium nostrum, officia distinctio voluptate iusto magni mollitia!</p>
+    <p id="p5" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. In ab maiores ipsa mollitia, voluptatum ipsam similique perspiciatis veritatis! Molestias laboriosam laudantium sint ea.</p>
+
+    <button>Change paragraph color to red</button>
+</body>
+<script>
+document.querySelector("button").addEventListener("click",()=>{
+    var elements = document.querySelectorAll(".para");
+    elements.forEach((ele)=>{
+        ele.style="color:red";
+    });
+});
+</script>
+</html>

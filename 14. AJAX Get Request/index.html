@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Get Request </title>
+</head>
+<body>
+    <button onclick="getData()">Fetch data</button>
+
+    <script>
+        function getData(){
+            fetch("https://api.example.com/data",{method:"GET"})
+            .then(response=>response.json())
+            .then(result=>console.log(result))
+            .catch(error=>console.log(error));
+        }
+    </script>
+</body>
+</html>

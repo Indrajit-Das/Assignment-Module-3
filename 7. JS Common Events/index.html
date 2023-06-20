@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>Common Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onclick="getCoordinates(event)">
+  <h1>To get the coordiantes (x,y) click anywhere on the page. !</h1>
+  <h2>To get The Keyboard key code and the key : press any key</h2>
+  <div class="image-container">
+    <p>Move your mouse over image in the green box to change the current image </p>
+    <img  id="myImage" src="images/first.png" alt="bird-iamge"  onmouseenter="changeImage(event)">
+  </div>
+
+  <script>
+    // to get the coordinates of a page 
+    function getCoordinates(e) {
+      var x = e.clientX;
+      var y = e.clientY;
+      alert("Clicked coordinates: (" + x + ", " + y + ")");
+    }
+    // to get the key code and key
+    document.addEventListener("keypress", function(event) {
+        alert("Key: " + event.key+" Key code: "+event.keyCode);
+    });
+    // to change the image when user moves mouse inside the green box
+    // creating an imageArray
+    var imageArray=["first.png","second.jfif","third.jfif","fourth.jfif","fifth.jfif","sixth.jfif"];
+    var i=0;
+    function changeImage(e){
+      var image = document.querySelector('#myImage');
+      if(i==0){
+        image.src="images/"+imageArray[i];
+        i++;
+      }
+      else if(i==1){
+        image.src="images/"+imageArray[i];
+        i++;
+      }
+      else if(i==2){
+        image.src="images/"+imageArray[i];
+        i++;
+      }
+      else if(i==3){
+        image.src="images/"+imageArray[i];
+        i++;
+      }
+      else if(i==4){
+        image.src="images/"+imageArray[i];
+        i++;
+      }
+      else if(i==5){
+        image.src="images/"+imageArray[i];
+        i=0;
+      }
+    }
+  </script>
+</body>
+</html>

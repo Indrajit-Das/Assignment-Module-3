@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element & Append Element list 1-5</title>
+</head>
+<body>
+    <div class="container">
+        <ul></ul>
+        <br><br>
+        <button onclick="makeLi()">click me</button>
+    </div>
+    <script>
+        function makeLi(){
+            for(var i=1;i<=5;i++){
+                var destination = document.querySelector("ul");
+                var element =document.createElement("li");
+                element.append(i);
+                destination.append(element);
+            }
+    }
+    </script>
+</body>
+</html>

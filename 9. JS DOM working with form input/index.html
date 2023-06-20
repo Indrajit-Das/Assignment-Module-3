@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Working with form input</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="errorMsg"></div>
+        <form action="/" method="post">
+            <div>
+                <small id="nameError"></small>
+                <label for="name">Name : </label><br>
+                <input type="text" name="name" id="name" placeholder="Enter your name"><br>
+            </div>
+            <div>
+                <small id="emailError"></small>
+                <label for="email">Email : </label><br>
+                <input type="email" name="email" id="email" placeholder="Enter your email"><br>
+            </div>
+            <div>
+                <small id="passError"></small>
+                <label for="email">Password : </label><br>
+                <input type="password" name="password" id="password" placeholder="Enter your password"><br>
+            </div>
+            <div>
+                <small id="conPassError"></small>
+                <label for="confirm-password">Confirm-Password : </label><br>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter confirm-password">
+            </div>
+            <br>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+    <script>
+        document.querySelector("form").addEventListener("submit",(e)=>{
+           
+            e.preventDefault();
+            const name = document.querySelector("#name").value.trim();
+            const email = document.querySelector("#email").value.trim();
+            const password = document.querySelector("#password").value.trim();
+            const confirmPassword = document.querySelector("#confirmPassword").value.trim();
+        
+            // validation for name
+            const nameRegex = /^[a-zA-Z]+$/;
+            var isValidName = nameRegex.test(name);
+            if(name==="" || name===null || isValidName===false ){
+                document.querySelector("#nameError").style="display:block";
+                document.querySelector("#nameError").innerHTML ="* Name should not be empty and should contain only letters <br>";
+            }else{
+                document.querySelector("#nameError").style="display:none";
+            }
+            // email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(emailRegex.test(email)==false || email===""){
+                document.querySelector("#emailError").style="display:block";
+                document.querySelector("#emailError").innerHTML ="* Email should be a valid email address <br>";
+            }else{
+                document.querySelector("#emailError").style="display:none";
+            }
+            // password validation
+            const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            if(regex.test(password)==false || password===""){
+                document.querySelector("#passError").style="display:block";
+                document.querySelector("#passError").innerHTML ="* Password should have a minimum length of 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit. <br>";
+            }else{
+                document.querySelector("#passError").style="display:none";
+            }
+            // validation for confirm-password
+            if(password !== confirmPassword || confirmPassword===""){
+                document.querySelector("#conPassError").style="display:block";
+                document.querySelector("#conPassError").innerHTML ="* Confirm Password is not matching <br>";
+            }else{
+                document.querySelector("#conPassError").style="display:none";
+            }
+        });
+    </script>
+</body>
+</html>

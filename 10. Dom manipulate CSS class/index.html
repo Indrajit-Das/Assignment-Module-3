@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>DOM Manipulate CSS class</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, magni!--------------</p>
+        <button onclick="change()">click me</button>
+    </div>
+    <script>
+       function change(){
+        document.querySelector("p").classList.add("highlight");
+       }
+    </script>
+</body>
+</html>
